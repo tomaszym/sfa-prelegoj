@@ -3,13 +3,14 @@
 \usepackage[utf8x]{inputenc} 
 \usepackage[esperanto,polish]{babel}
 %\usepackage{umbcboxes}
+\usepackage{listings}
 
 \title[Esperanto w programowaniu]{Zalety używania planowego języka aglutacyjnego do programowania na przykładzie esperanta.}
 %\subtitle{}
 \author{Tomasz Szymula}
 \institute[PEJ]{Koło naukowe Blabel, AGH}
 
-\date[2014]{Nta sesja kół naukowych, 2014}
+\date[2014]{51-wsza sesja kół naukowych,\\ \today}
 \subject{Lingvistiko}
 %Zalety używania planowego języka aglutacyjnego do programowania na przykładzie esperanta.
 
@@ -18,16 +19,35 @@
 %tego celu języka z regularnym słowotwórstwem opartym o sklejanie
 %zrostków daje interesujące rezultaty. Omówienie kilku przydatnych
 %afiksów esperanta z przykładami oraz porównaniem do języka angielskiego
-\usetheme{Warsaw}
-%\usecolortheme{crane}
+\usetheme{Antibes}
+\usecolortheme{dolphin}
 
 \AtBeginSubsection[]
 {
   \begin{frame}
-    \frametitle{Plano}
+    \frametitle{Plan}
     \tableofcontents[currentsubsection]
   \end{frame}
 }
+% "define" Scala
+\lstdefinelanguage{Scala}{
+  morekeywords={abstract,case,catch,class,def,%
+    do,else,extends,false,final,finally,%
+    for,if,implicit,import,match,mixin,%
+    new,null,object,override,package,%
+    private,protected,requires,return,sealed,%
+    super,this,throw,trait,true,try,%
+    type,val,var,while,with,yield},
+  otherkeywords={=>,<-,<\%,<:,>:,\#,@},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[n]{/*}{*/},
+  morestring=[b]",
+  morestring=[b]',
+  morestring=[b]"""
+}
+
+\lstset{language=Scala} 
 
 \begin{document}
   \frame{\titlepage}
@@ -48,8 +68,11 @@
   	
   	\pause
 
-	\begin{block}{A dla lingwisty}
-		Aglutynacyjny. 
+\definecolor{antiquefuchsia}{rgb}{0.57, 0.36, 0.51}
+\definecolor{ao(english)}{rgb}{0.0, 0.5, 0.0}
+\definecolor{blue(pigment)}{rgb}{0.2, 0.2, 0.6}
+	\begin{block}{A dla lingwisty aglutynacyjny}
+		Na przykład, bo lubię czytać\dots \textbf{\textcolor{antiquefuchsia}{libr}o\textcolor{ao(english)}{j}\textcolor{blue(pigment)}{n}}
 	\end{block}  	
   	
   \end{frame}
@@ -61,11 +84,15 @@
   \begin{frame}
   	\frametitle{Rdzenie}
   	\framesubtitle{Za broszurą ,,Malkovru Esperanton''}
-	Rdzenie w języku esperanto pochodzą z:
+  	
+  	\begin{block}{Słowotwórstwo}
+  		Oparte o system prefiksów i sufiksów
+  	\end{block}
+	Rdzenie wyrazów pochodzą z języków:
 	\begin{itemize}
-		\item ~75\% z języków romańskich
-		\item ~20\% z germańskich
-		\item ~5\% z innych języków
+		\item ~75\% z romańskich,
+		\item ~20\% z germańskich,
+		\item ~5\% z innych.
 	\end{itemize}
 		
   \end{frame}
@@ -77,15 +104,15 @@
   	  	
   		\begin{block}{-il}
   			\begin{center}
-  			,,narzędzia''
+  				narzędzie
   			\end{center}
   		\end{block}
   	
   		\begin{itemize}
   			\item<1-> tranĉi -- kroić $\rightarrow$ tranĉilo -- nóż
-  			\item<1-> kompili -- kompilować $\rightarrow$ kompililo -- kompilator
+%  			\item<1-> kompili -- kompilować $\rightarrow$ kompililo -- kompilator
   			\item<1-> ligi -- łączyć $\rightarrow$ ligilo -- link
-  			\item<2-> manĝi -- jeść $\rightarrow$ \pause manĝilo -- sztuciec
+%  			\item<2-> manĝi -- jeść $\rightarrow$ \pause manĝilo -- sztuciec
   		\end{itemize}
   \end{frame}
 
@@ -96,15 +123,15 @@
   	  	
   		\begin{block}{-ar}
   			\begin{center}
-  				zbiory
+  				zbiór
   			\end{center}
   		\end{block}
   	
   		\begin{itemize}
   			\item<1-> arbo -- drzewo $\rightarrow$ arbaro -- las
-  			\item<1-> homo -- człowiek $\rightarrow$ homaro -- ludzkość
+%  			\item<1-> homo -- człowiek $\rightarrow$ homaro -- ludzkość
   			\item<1-> klavo -- klawisz $\rightarrow$ klavaro -- klawiatura
-  			\item<2-> manĝilo - sztuciec $\rightarrow$ \pause manĝilaro - zastawa
+%  			\item<2-> manĝilo - sztuciec $\rightarrow$ \pause manĝilaro - zastawa
   		\end{itemize}
   \end{frame}
 
@@ -115,85 +142,105 @@
   	  	
   		\begin{block}{-er}
   			\begin{center}
-  			,,część''
+  			cząstka
   			\end{center}
   		\end{block}
   	
   		\begin{itemize}
 			\item<1-> programo -- program $\rightarrow$ programero -- punkt programu
-			\item<1-> blogo -- blogero $\rightarrow$ blogero -- wpis na blogu
+			\item<1-> blogo -- blog $\rightarrow$ blogero -- wpis na blogu
 			
   		\end{itemize}
   \end{frame}
 
-  \begin{frame}
-  	\frametitle{Ogólny przykład do afiksów}
-  	
-  	coś w stylu:\\
-  	manĝi - jesc,\\
-  	manĝilo - sztuciec\\
-  	manĝilaro - zastawa\\
-  	manĝeti - podjadac\\
-  	manĝegi - "wcinac"\\
-  	antaŭmanĝi - przedjadac (?)\\
-  	itd.
-
-  \end{frame}
+%  \begin{frame}
+%  	\frametitle{Ogólny przykład do afiksów}
+%  	
+%  	coś w stylu:\\
+%  	manĝi - jesc,\\
+%  	manĝilo - sztuciec\\
+%  	manĝilaro - zastawa\\
+%  	manĝeti - podjadac\\
+%  	manĝegi - "wcinac"\\
+%  	antaŭmanĝi - przedjadac (?)\\
+%  	itd.
+%
+%  \end{frame}
  
   \section{W praktyce}
-  \subsection{Banda czworga}
+  \subsection{Wzorce projektowe}
   
-  \begin{frame}
-  \frametitle{Wzorce projektowe}
-  Wzorce projektowe to dobry przykład, żeby najpierw pokazać, że w ogólnych przypadkach esperanto radziłoby sobie niegorzej niż angielski (który chwilami też jest aglutynacyjny z resztą).
-  \end{frame}  
+\begin{frame}
+	\frametitle{Wybrane wzorce projektowe}
+	
+	\begin{block}{}
+		Observer, Observable $\rightarrow$ Spektanto, Spektebla
+	\end{block}
+	
+	\begin{block}{}
+		Decorator $\rightarrow$ Dekoranto
+	\end{block}
+	
+	\begin{block}{}
+		Interpreter $\rightarrow$ Interpretilo
+	\end{block}
+	
+	\dots
+\end{frame}  
 
-  \begin{frame}
-  \frametitle{Obserwator, Obserwowany}
-  Spektato, Spektanto
-  \end{frame}  
-  
-  \begin{frame}
-  \frametitle{Dekorator}
-  Dekorilo
-  \end{frame}  
- 
-  
+\begin{frame}
+	\frametitle{Wejście/wyjście}
+	
+	\begin{block}{}
+		in/out $\rightarrow$ en/el
+	\end{block}
+	
+	\dots
+\end{frame}  
     
   \subsection{Moje przykłady}
   
   \begin{frame}
-  \tableofcontents[currentsubsection]
-  \end{frame}  
- 
-  \begin{frame}
   	\frametitle{Kolekcja użytkowników}
 
-	uzantaro vs. users, userList, userCollection
+	\begin{block}{}
+		users $\rightarrow$ uzantaro
+	\end{block}
+	\begin{block}{}
+		? $\rightarrow$ uzantaroj
+	\end{block}
 	
-	uzantaroj?
   \end{frame}
   
   \begin{frame}
-  	\frametitle{Część}
+  	\frametitle{Część: ero}
 
-	imagePart vs bildero,\\
-	recivatero
-  \end{frame}
-  
-  \begin{frame}
-  	\frametitle{Ale o co chodzi}
-
-	MultiValueOutputFeatureToBinaryEncoder vs PlurvaluaEcoAlDuumaKodilo,\\
-	recivatero
-  \end{frame}
-  
-  \begin{frame}
-    \frametitle{Inne przykłady}
+	\begin{block}{}
+		imagePart $\rightarrow$ bildero
+	\end{block}
+	\begin{block}{}
+		requestPart $\rightarrow$ petero
+	\end{block}
 	
-	Jeszcze jakieś przykłady oczywiście bym znalazł - dopasuję w zależności od tego ile mi zajmie powiedzenie tego co już jest.
-  \end{frame}  
+  \end{frame}
   
+  \begin{frame}
+  	\frametitle{Zbiór narzędzi}
+
+	\begin{block}{}
+		Toolset $\rightarrow$ ilaro
+	\end{block}
+	\begin{block}{}
+		Trello toolset $\rightarrow$ trelloilaro
+	\end{block}
+  \end{frame}
+  \begin{frame}
+  	\frametitle{Wiekszy przykład}
+  	\begin{block}{}
+  		\lstinputlisting[firstline=14, lastline=18, basicstyle=\small]{ordonoj.scala}
+	\end{block}
+  \end{frame}
+    
   \begin{frame}
   	\frametitle{Podsumowanie}
   	Jeśli 
